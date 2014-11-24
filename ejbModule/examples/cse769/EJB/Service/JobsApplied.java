@@ -27,7 +27,6 @@ public class JobsApplied {
 		long aidNbr;
 		String aid = "";
 
-		String user1 = "";
 		List<JobApplyEntity> jobApply;
 		Query query = em.createNativeQuery
 				("select * from JOBAPPLY where USER like '" + user

@@ -20,7 +20,7 @@ public class BarEntity implements Serializable{
 
 	@Column(name="NAME")
 	private String name;
-	public String getUserName() {return name;}
+	public String getName() {return name;}
 
 	public void setName(String Names) 
 	{
