@@ -17,6 +17,7 @@ public class SpecialManager {
 	public List<List<String>> findForBar(int barid) {
 		
 		List<List<String>> specials = new ArrayList<List<String>>();
+		String[] weekdays = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
 		
 		String day = "";
 		String end = "";
@@ -41,7 +42,7 @@ public class SpecialManager {
 				SpecialEntity speciale = new SpecialEntity();
 				speciale = foundspecials.get(i);
 				
-				day = String.valueOf(speciale.getDay());
+				day = weekdays[speciale.getDay()];;
 				end = speciale.getEnd();
 				specialid = String.valueOf(speciale.getSpecialid());
 				start = speciale.getStart();

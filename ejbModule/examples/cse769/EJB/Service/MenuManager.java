@@ -17,6 +17,7 @@ public class MenuManager {
 	
 	public List<List<String>> findForBar(int barid) {
 		List<List<String>> menus = new ArrayList<List<String>>();
+		String[] weekdays = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
 		
 		String menuid;
 		String title;
@@ -43,7 +44,7 @@ public class MenuManager {
 			
 				menuid = String.valueOf(menuinge.getMenuid());
 				title = menuinge.getTitle();
-				day = String.valueOf(menuinge.getDay());
+				day = weekdays[menuinge.getDay()];
 				start = menuinge.getStart();
 				end  = menuinge.getEnd();
 				

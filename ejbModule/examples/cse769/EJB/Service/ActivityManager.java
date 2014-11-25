@@ -18,6 +18,8 @@ public class ActivityManager {
 	public List<List<String>> findForBar(int barid) {
 		List<List<String>> activitys = new ArrayList<List<String>>();
 	
+		String[] weekdays = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
+		
 	String activityid;
 	String name ="";
 	String type="";
@@ -45,7 +47,7 @@ public class ActivityManager {
 			activityid = String.valueOf(activityinge.getActivityid());
 			name = activityinge.getName();
 			type = activityinge.getType();
-			day = String.valueOf(activityinge.getDay());
+			day = weekdays[activityinge.getDay()];
 			start = activityinge.getStart();
 			end = activityinge.getEnd();
 			cost = String.valueOf(activityinge.getActivityid());
