@@ -18,7 +18,7 @@ public class RatingManager {
 	public List<List<String>> findForBar(int barid) {
 		List<List<String>> ratings = new ArrayList<List<String>>();
 
-		String ratingid;
+		String ratingid = "";
 		String rating = "";
 		String comment = "";
 		String date = "";
