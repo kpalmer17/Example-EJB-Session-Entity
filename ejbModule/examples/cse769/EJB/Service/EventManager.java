@@ -67,46 +67,5 @@ public class EventManager {
 		}
     	
     	else return events;
-	}
-	
-	
-	
-	
-public String add(int eventid, String name, String description, String date, String start, String end, int barid) {
-		
-		EventEntity event = new EventEntity();
-		
-	
-		event.setEventid(eventid);
-		event.setName(name);
-		event.setDescription(description);
-		event.setDate(date);
-		event.setStart(start);
-		event.setEnd(end);
-		
-		try
-		{
-		em.persist(event);
-		em.flush();
-		}
-		catch(EntityExistsException e)
-		{
-			return "fail";
-		}
-		
-		catch(ConstraintViolationException e)
-		{
-			return "fail";
-		}
-		
-		catch(Exception e)
-		{
-			return "fail";
-		}
-		
-		return event.getDate();
-	}
-	
-	
-	
+	}	
 }
