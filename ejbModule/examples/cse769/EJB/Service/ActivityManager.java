@@ -64,40 +64,4 @@ public class ActivityManager {
 	}
 	else return activitys;
 	}
-	
-public String add(int activityid, String name, String type, int day, String start, String end, double cost, int barid) {
-		
-		ActivityEntity activity = new ActivityEntity();
-		
-		activity.setActvityid(activityid);
-		activity.setName(name);
-		activity.setType(type);
-		activity.setDay(day);
-		activity.setStart(start);
-		activity.setEnd(end);
-		activity.setCost(cost);
-		
-		try
-		{
-		em.persist(activity);
-		em.flush();
-		}
-		catch(EntityExistsException e)
-		{
-			return "fail";
-		}
-		
-		catch(ConstraintViolationException e)
-		{
-			return "fail";
-		}
-		
-		catch(Exception e)
-		{
-			return "fail";
-		}
-		
-		return activity.getName(); //fix later on not sure what to return exactly
-	}
-	
 }

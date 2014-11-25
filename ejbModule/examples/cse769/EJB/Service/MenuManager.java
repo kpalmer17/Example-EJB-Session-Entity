@@ -65,37 +65,4 @@ public class MenuManager {
     	else return menus;
 	}
 		
-	public String add(int menuid, String title, int day, String start, String end, int barid) {
-		
-	MenuEntity menu = new MenuEntity();
-	
-	menu.setMenuid(menuid);
-	menu.setTitle(title);
-	menu.setDay(day);
-	menu.setStart(start);
-	menu.setEnd(end);
-
-	try
-	{
-	em.persist(menu);
-	em.flush();
-	}
-	catch(EntityExistsException e)
-	{
-		return "fail";
-	}
-	
-	catch(ConstraintViolationException e)
-	{
-		return "fail";
-	}
-	
-	catch(Exception e)
-	{
-		return "fail";
-	}
-	
-	return menu.getTitle();
-	}
-	
 }
