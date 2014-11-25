@@ -16,7 +16,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 //import org.mockito.runners.MockitoJUnitRunner;
-import static org.mockito.Mockito.*;
+//import static org.mockito.Mockito.*;
 //import org.junit.
 //@Stateless(name = "JobListingTest")
 //@RunWith(MockitoJUnitRunner.class)

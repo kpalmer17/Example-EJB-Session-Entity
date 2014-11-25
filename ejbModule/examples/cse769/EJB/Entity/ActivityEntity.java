@@ -11,7 +11,7 @@ public class ActivityEntity implements Serializable{
 	@Column(name="ACTIVITYID")
 	
 	private int activityid;
-	public int getActvityid(){
+	public int getActivityid(){
 		return this.activityid;
 	}
 	public void setActvityid(int actId)
