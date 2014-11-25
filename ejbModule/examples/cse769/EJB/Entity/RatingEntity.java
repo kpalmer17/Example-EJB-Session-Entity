@@ -4,7 +4,7 @@ import java.io.*;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "MessageTable")
+@Table(name = "RATING")
 public class RatingEntity implements Serializable{
 	
 	
@@ -50,8 +50,6 @@ public class RatingEntity implements Serializable{
 		this.date = date;
 	}
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name="USERID")
 	private int userid;
 
@@ -62,9 +60,6 @@ public class RatingEntity implements Serializable{
 		this.userid = userid;
 	}
 	
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name="BARID")
 	private int barid;
 

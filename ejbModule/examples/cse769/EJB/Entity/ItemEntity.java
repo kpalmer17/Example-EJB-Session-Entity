@@ -4,7 +4,7 @@ import java.io.*;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "MessageTable")
+@Table(name = "ITEM")
 public class ItemEntity implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -20,7 +20,7 @@ public class ItemEntity implements Serializable{
 	
 	@Column(name="NAME")
 	private String name;
-	public String getUserName() {return name;}
+	public String getName() {return name;}
 
 	public void setName(String Names) 
 	{
@@ -38,16 +38,15 @@ public class ItemEntity implements Serializable{
 	}
 	
 	@Column(name="PRICE")
-	private int price;
+	private double price;
 
-	public int getPrice() {
+	public double getPrice() {
 		return price;
 	}
 	public void setPrice(int price) {
 		this.price = price;
 	}
 	
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name="MENUID")
 	private int menuid;
 
@@ -58,7 +57,6 @@ public class ItemEntity implements Serializable{
 		this.menuid = menuid;
 	}
 	
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name="SPECIALID")
 	private int specialid;
 

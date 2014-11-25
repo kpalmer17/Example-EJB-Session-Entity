@@ -4,15 +4,15 @@ import java.util.List;
 import javax.persistence.*;
 import javax.validation.ConstraintViolationException;
 
-import examples.cse769.EJB.*;
 import examples.cse769.EJB.Entity.*;
 
 import javax.ejb.Stateless;
 
 @Stateless
 public class AccountManager {
+	
 	 @PersistenceContext(unitName="examples-769-EJB")
-		EntityManager em;
+	 EntityManager em;
 	 
 	 public String login (String username, String password){
 		 
@@ -29,7 +29,9 @@ public class AccountManager {
 				
 				if(!loginList.isEmpty())			//if user actually exists
 				{
-					return "success";
+					AccountEntity acc = new AccountEntity();
+					acc = loginList.get(0);
+					return String.valueOf(acc.getUserid());
 				}
 			}
 			

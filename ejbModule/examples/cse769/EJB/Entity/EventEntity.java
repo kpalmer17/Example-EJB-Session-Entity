@@ -4,7 +4,7 @@ import java.io.*;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "MessageTable")
+@Table(name = "EVENT")
 public class EventEntity implements Serializable{
 	
 	@Id
@@ -21,7 +21,7 @@ public class EventEntity implements Serializable{
 
 	@Column(name="NAME")
 	private String name;
-	public String getUserName() {return name;}
+	public String getName() {return name;}
 
 	public void setName(String Names) 
 	{
@@ -77,8 +77,6 @@ public class EventEntity implements Serializable{
 		this.cost = cost;
 	}
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name="BARID")
 	private int barid;
 

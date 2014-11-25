@@ -4,8 +4,9 @@ import java.io.*;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "MessageTable")
+@Table(name = "MENU")
 public class MenuEntity implements Serializable{
+	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name="MENUID")
 	private int menuid;
@@ -60,8 +61,6 @@ public class MenuEntity implements Serializable{
 		this.end = end;
 	}
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name="BARID")
 	private int barid;
 

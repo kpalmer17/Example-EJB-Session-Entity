@@ -4,12 +4,12 @@ import java.io.*;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "MessageTable")
+@Table(name = "SPECIAL")
 public class SpecialEntity implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name="BARID")
+	@Column(name="SPECIALID")
 	private int specialid;
 
 	public int getSpecialid() {
@@ -61,8 +61,6 @@ public class SpecialEntity implements Serializable{
 		this.end = end;
 	}
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name="BARID")
 	private int barid;
 
@@ -72,5 +70,4 @@ public class SpecialEntity implements Serializable{
 	public void setBarid(int barid) {
 		this.barid = barid;
 	}
-	
 }

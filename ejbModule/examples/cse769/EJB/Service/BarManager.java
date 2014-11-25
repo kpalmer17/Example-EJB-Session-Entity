@@ -17,7 +17,7 @@ public class BarManager {
     public List<List<String>> find(String label, String searchtext) {
     	
     	List<List<String>> bars = new ArrayList<List<String>>();
-    	int baridnum,pricenum;
+
     	String name = "";
     	String type = "";
     	String address = "";
@@ -39,12 +39,29 @@ public class BarManager {
 
     	case "item":
     		//needs query, I need to figure out the table joining
+    		query = em.createNativeQuery
+			("SELECT BAR.BARID, BAR.NAME, BAR.TYPE, BAR.PRICE, BAR.ADDRESS , BAR.OPEN , BAR.CLOSE" +
+    		"FROM BAR, MENU, SPECIAL, ITEM" + 
+			"WHERE BAR.BARID = MENU.BARID AND BAR.BARID = SPECIAL.BARID AND MENU.MENUID = ITEM.MENUID" +
+    		" AND SPECIAL.SPECIALID = ITEM.SPECIALID AND ITEM.NAME LIKE " + searchtext
+					+ "'" , BarEntity.class);
+    		
     		break;
     	case "activity":
     		//needs query, I need to figure out the table joining
+    		query = em.createNativeQuery
+			("SELECT BAR.BARID, BAR.NAME, BAR.TYPE, BAR.PRICE, BAR.ADDRESS , BAR.OPEN , BAR.CLOSE" +
+    		"FROM BAR, ACTIVITY" + 
+			"WHERE BAR.BARID = ACTIVITY.BARID AND ACTIVITY.NAME LIKE " + searchtext
+					+ "'" , BarEntity.class);
     		break;
     	case "event":
     		//needs query, I need to figure out the table joining
+    		query = em.createNativeQuery
+			("SELECT BAR.BARID, BAR.NAME, BAR.TYPE, BAR.PRICE, BAR.ADDRESS , BAR.OPEN , BAR.CLOSE" +
+    		"FROM BAR, EVENT" + 
+			"WHERE BAR.BARID = EVENT.BARID AND EVENT.NAME LIKE " + searchtext
+					+ "'" , BarEntity.class);
     		break;
     	default: 
             System.out.println("ERROR in BarManager label switch");

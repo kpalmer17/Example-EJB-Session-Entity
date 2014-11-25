@@ -4,7 +4,7 @@ import java.io.*;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "MessageTable")
+@Table(name = "ACTIVITY")
 public class ActivityEntity implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -21,7 +21,7 @@ public class ActivityEntity implements Serializable{
 	
 	@Column(name="NAME")
 	private String name;
-	public String getUserName() {return name;}
+	public String getName() {return name;}
 
 	public void setName(String Names) 
 	{
@@ -79,8 +79,6 @@ public class ActivityEntity implements Serializable{
 		this.cost = cost;
 	}
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name="BARID")
 	private int barid;
 
@@ -91,7 +89,5 @@ public class ActivityEntity implements Serializable{
 		this.barid = barid;
 	}
 
-	
-	
 }
 
