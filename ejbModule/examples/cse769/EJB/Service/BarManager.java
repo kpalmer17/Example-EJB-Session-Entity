@@ -37,13 +37,22 @@ public class BarManager {
 					+ "'" , BarEntity.class);
     		break;
 
-    	case "item":
+    	case "food":
     		//needs query, I need to figure out the table joining
     		query = em.createNativeQuery
 			("SELECT BAR.BARID, BAR.NAME, BAR.TYPE, BAR.PRICE, BAR.ADDRESS , BAR.OPEN , BAR.CLOSE" +
-    		"FROM BAR, MENU, SPECIAL, ITEM" + 
-			"WHERE BAR.BARID = MENU.BARID AND BAR.BARID = SPECIAL.BARID AND MENU.MENUID = ITEM.MENUID" +
-    		" AND SPECIAL.SPECIALID = ITEM.SPECIALID AND ITEM.NAME LIKE " + searchtext
+					"FROM BAR, MENU, ITEM" +
+					"WHERE BAR.BARID = MENU.BARID AND MENU.MENUID = ITEM.MENUID AND ITEM.NAME LIKE '" + searchtext
+					+ "'" , BarEntity.class);
+    		
+    		break;
+    		
+    	case "drink":
+    		//needs query, I need to figure out the table joining
+    		query = em.createNativeQuery
+			("SELECT BAR.BARID, BAR.NAME, BAR.TYPE, BAR.PRICE, BAR.ADDRESS , BAR.OPEN , BAR.CLOSE" +
+					"FROM BAR, SPECIAL, ITEM" +
+					"WHERE BAR.BARID = SPECIAL.BARID AND SPECIAL.SPECIALID = ITEM.SPECIALID AND ITEM.NAME LIKE '" + searchtext
 					+ "'" , BarEntity.class);
     		
     		break;
