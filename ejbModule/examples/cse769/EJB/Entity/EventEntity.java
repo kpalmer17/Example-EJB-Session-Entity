@@ -67,16 +67,6 @@ public class EventEntity implements Serializable{
 		this.end = end;
 	}
 	
-	@Column(name="COST")
-	private double cost;
-
-	public double getCost() {
-		return cost;
-	}
-	public void setCost(double cost) {
-		this.cost = cost;
-	}
-	
 	@Column(name="BARID")
 	private int barid;
 
