@@ -35,7 +35,7 @@ public class BarManager {
     	switch (label) {
     	case "bar":
     		query = em.createNativeQuery
-			("select * from BAR where UPPER(NAME) like '%" + searchtext
+			("select * from BAR where UPPER(NAME) like '%" + searchtext.toUpperCase()
 					+ "%'" , BarEntity.class);
     		break;
 
